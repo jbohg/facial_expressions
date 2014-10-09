@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
   signal (SIGINT,my_handler);
 
   if(argc<3){
-    std::cerr << "\33[32;40m Usage: " << argv[0] << " /path/to/serial/config /path/to/emotion/library \33[0m" << std::endl;
+    std::cerr << "\33[32;40m Usage: " << argv[0] << " /path/to/serial/config.yaml /path/to/emotion/library.yaml \33[0m" << std::endl;
     return -1;
   } 
   

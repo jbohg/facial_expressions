@@ -1,8 +1,8 @@
 <launch>
   
-  <node pkg="mood_manager" type="expression_switch"  name="expression_switch" output="screen">	
-    <param name="serial_config" type="string" value="$(find mood_manager)/config/serialport.yaml" />
-    <param name="expression_lib" type="string" value="$(find mood_manager)/config/emotions.yaml" />
+  <node pkg="facial_expressions" type="expression_switch"  name="expression_switch" output="screen">	
+    <param name="serial_config" type="string" value="$(find facial_expressions)/config/serialport.yaml" />
+    <param name="expression_lib" type="string" value="$(find facial_expressions)/config/emotions.yaml" />
   </node>
   
 </launch>

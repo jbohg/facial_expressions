@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(facial_expression)
+project(facial_expressions)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -92,7 +92,7 @@ include_directories(include)
 
 
 #common commands for building c++ executables and libraries          
-add_library(facial_expression
+add_library(${PROJECT_NAME}
   src/SerialDeviceDriver.cpp src/emotionInterface.cpp
   )
 
@@ -103,7 +103,7 @@ target_link_libraries(${PROJECT_NAME}
   )
 
 # test program to randomly cycle through emotions
-add_executable(face_emo src/main.cpp)
+add_executable(random_emotion src/main.cpp)
 target_link_libraries(face_emo ${PROJECT_NAME} )
 
 # node to listen to incoming emotion switch messages
