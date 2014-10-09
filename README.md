@@ -27,6 +27,7 @@ cd src
 git clone this_package.git
 cd ../../
 catkin_make
+source devel/setup.bash
 ```
 
 
