@@ -104,7 +104,7 @@ target_link_libraries(${PROJECT_NAME}
 
 # test program to randomly cycle through emotions
 add_executable(random_emotion src/main.cpp)
-target_link_libraries(face_emo ${PROJECT_NAME} )
+target_link_libraries(random_emotion ${PROJECT_NAME} )
 
 # node to listen to incoming emotion switch messages
 add_executable(expression_switch src/switchEmotions.cpp)
