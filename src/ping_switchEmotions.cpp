@@ -23,7 +23,7 @@ int main(int argc, char **argv)
     if(count%2)
       ss << "hap";
     else 
-      ss << "sad";
+      ss << "sur";
     msg.data = ss.str();
 
     //ROS_INFO("%s", msg.data.c_str());

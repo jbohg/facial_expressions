@@ -45,12 +45,8 @@ namespace emotions {
     std::cout << "Reading Emotion Library" << std::endl;
     try {
     
-      std::ifstream fin(config_file);
-      YAML::Parser parser(fin);
-    
-      YAML::Node doc;
-      parser.GetNextDocument(doc);
-    
+      YAML::Node doc = YAML::LoadFile(config_file);
+        
       n_emotions_ = doc.size();
       emotion_table_ = new EM_CODE[n_emotions_];
       
@@ -92,11 +88,7 @@ namespace emotions {
   {
     try {
     
-      std::ifstream fin(config_file);
-      YAML::Parser parser(fin);
-    
-      YAML::Node doc;
-      parser.GetNextDocument(doc);
+      YAML::Node doc = YAML::LoadFile(config_file);
     
       doc["portname"] >> config_serial.CommChannel;
       doc["verbose"] >> config_serial.verbose;
