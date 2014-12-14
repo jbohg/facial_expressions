@@ -1,6 +1,6 @@
 - name: neu
-  left:	 02
-  right: 02
+  left:	 01
+  right: 01
   mouth: 08
 - name: ta1 
   left:  -- 
@@ -38,3 +38,23 @@
   left:  04 
   right: 01 
   mouth: 38
+- name: bl1
+  left:  08 
+  right: 08 
+  mouth: --
+- name: bl0
+  left:  01 
+  right: 01 
+  mouth: --
+- name: smi
+  left:  -- 
+  right: -- 
+  mouth: 38
+- name: hel
+  left:  -- 
+  right: -- 
+  mouth: 16
+- name: llo
+  left:	 --
+  right: --
+  mouth: 08
