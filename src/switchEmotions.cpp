@@ -7,9 +7,10 @@ emotions::EmotionInterface emo;
 
 void expressionCallback(const std_msgs::String::ConstPtr& msg)
 {
-  
-  emo.setAll(msg->data.c_str());
-  
+  if(msg->data.compare("hello") == 0) {
+    emo.sayHello();
+  }  else
+    emo.setAll(msg->data.c_str());  
 }
 
 int main(int argc, char **argv)
@@ -25,7 +26,7 @@ int main(int argc, char **argv)
   nh_priv.param<std::string>("expression_lib", exp_lib, "config/emotions.yaml");
   emo.configure( serial_config.c_str(), exp_lib.c_str());
 
-  ros::Subscriber sub = nh.subscribe("expression", 1000, expressionCallback);
+  ros::Subscriber sub = nh.subscribe("expression", 1, expressionCallback);
 
   ros::spin();
 

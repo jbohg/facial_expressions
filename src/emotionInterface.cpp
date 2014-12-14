@@ -234,17 +234,17 @@ namespace emotions {
   bool EmotionInterface::setAll(const std::string cmd)
   {
     if(!setLeftEyebrow(cmd)){
-      std::cerr << "\33[0;40m Command not known to left eyebrow. \33[0m" << std::endl;
+      std::cerr << "\33[0;40m Command not known to left eyebrow:" << cmd << "\33[0m" << std::endl;
       return false;
     }
 
     if(!setRightEyebrow(cmd)){
-      std::cerr << "\33[0;40m Command not known to right eyebrow. \33[0m" << std::endl;
+      std::cerr << "\33[0;40m Command not known to right eyebrow:" << cmd << "\33[0m" << std::endl;
       return false;
     }
 
     if(!setMouth(cmd)){
-      std::cerr << "\33[0;40m Command not known to mouth. \33[0m" << std::endl;
+      std::cerr << "\33[0;40m Command not known to mouth:" << cmd << "\33[0m" << std::endl;
       return false;
     }
     
@@ -299,6 +299,21 @@ namespace emotions {
       setAll(emotion_table_[i].name);
       usleep(5000000);
     }
+    return true;
+  }
+
+  bool EmotionInterface::sayHello( )
+  {
+    int sleep = 200000;
+    setAll("smi");
+    usleep(sleep);
+    setAll("hel");
+    usleep(sleep);
+    setAll("llo");
+    usleep(sleep);
+    setAll("smi");
+    usleep(sleep);
+
     return true;
   }
  

@@ -57,6 +57,9 @@ namespace emotions {
     // cycle through all emotions
     bool cycleAll();
 
+    // say Hello 
+    bool sayHello();
+
     // raise left eyebrow
     bool raiseEyebrow();
 
