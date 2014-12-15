@@ -21,11 +21,20 @@ int main(int argc, char **argv) {
   } 
   
   emotions::EmotionInterface emo;
-  emo.configure(argv[1], argv[2]);
+  if(!emo.configure(argv[1], argv[2]))
+    return -1;
 
+  int count = 0;
   while(true) {
     //    emo.raiseEyebrow();
-    emo.randomEmotion();
+    //emo.randomEmotion();
+    
+    if(count%2)
+      emo.setAll("hap");
+    else 
+      emo.setAll("neu");
+    count++;
+    
     usleep(3000000);
   }
   

@@ -38,7 +38,7 @@ bool SerialDeviceDriver::open(SerialDeviceDriverSettings& config)
     // Set TTY_IO parameter into the ACE_TTY_IO device(_serial_dev)
     if (_serial_dev.control (ACE_TTY_IO::SETPARAMS, &config.SerialParams) == -1)
     {
-         ACE_OS::printf("Can not control communications port %s \n", config.CommChannel);
+         ACE_OS::printf("Cannot control communications port %s \n", config.CommChannel);
         return false;
     }
 

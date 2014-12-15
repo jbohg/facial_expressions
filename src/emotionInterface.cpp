@@ -55,7 +55,7 @@ namespace emotions {
 	std::cout << emotion_table_[i].name << "\n";
       }    
 
-    } catch(YAML::ParserException& e) {
+    } catch(YAML::BadFile& e) {
       std::cerr << "\33[32;40m" << e.what() << "\33[0m" << std::endl;
       return false;
     }
@@ -84,7 +84,8 @@ namespace emotions {
 
 
 
-  bool EmotionInterface::readSerialConfig( SerialDeviceDriverSettings &config_serial, const char* config_file)
+  bool EmotionInterface::readSerialConfig( SerialDeviceDriverSettings &config_serial, 
+					   const char* config_file)
   {
     try {
     
@@ -110,7 +111,7 @@ namespace emotions {
       doc["stopbits"] >> config_serial.SerialParams.stopbits;
 
 
-    } catch(YAML::ParserException& e) {
+    } catch(YAML::BadFile& e) {
       std::cerr << "\33[32;40m" << e.what() << "\33[0m" << std::endl;
       return false;
     }
