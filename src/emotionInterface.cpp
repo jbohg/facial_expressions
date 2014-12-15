@@ -301,8 +301,8 @@ namespace emotions {
     setAll("smi");
     usleep(sleep);
     setAll("hel");
-    usleep(sleep);
-    setAll("llo");
+    //usleep(sleep);
+    //setAll("llo");
     usleep(sleep);
     setAll("smi");
     usleep(sleep);
